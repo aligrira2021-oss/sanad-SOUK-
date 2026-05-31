@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "An advertisement for a product.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "location": { "type": "string" },
+        "price": { "type": "number" },
+        "imageUrls": { "type": "array" },
+        "sellerId": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "sellerAvatar": { "type": "string" },
+        "plan": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "views": { "type": "number" },
+        "likes": { "type": "number" }
+      },
+      "required": ["title", "description", "category", "location", "price", "sellerId"]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "A collection of product listings."
+    }
+  }
+}
